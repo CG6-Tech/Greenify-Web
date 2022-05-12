@@ -1,0 +1,106 @@
+.home,
+.plants-container {
+  height: 100vh;
+  position: relative;
+  margin: auto 10%;
+
+  .heading {
+    font-size: 1.8rem;
+  }
+  .description {
+    color: grey;
+  }
+
+  .occation-list {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .btn-primay {
+      background-color: #f3f9f5;
+      margin: auto 5px;
+      padding: 5px 20px;
+      border: none;
+      border-radius: 20px;
+      white-space: nowrap;
+      color: var(--primary-color);
+    }
+  }
+
+  .category-container {
+    .nav-txt {
+      color: var(--primary-color);
+    }
+
+    .category-list {
+      padding: 10px;
+      display: flex;
+
+      .category-card {
+        max-width: 80px;
+        .img {
+          height: 75px;
+          width: 75px;
+          border-radius: 50px;
+          background-color: orange;
+        }
+        .title {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .plant-container {
+    .nav-txt {
+      color: var(--primary-color);
+    }
+
+    .plant-list {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 10px;
+
+      .plant-card {
+        .img {
+          height: 150px;
+          width: 100%;
+          border-radius: 5px;
+          background-color: #b9b9b9;
+        }
+      }
+    }
+  }
+
+  .btn-float {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 20px;
+  }
+}
+
+// Tablet Layout
+@media screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .plant-list {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+// Moblie Layout
+@media screen and (max-width: $mobile-width) {
+  .plants-container,
+  .home {
+    margin: auto 5% !important;
+    height: calc(100vh - 100px);
+
+    .plant-list {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<main class="main-container profile-container">
+  <div class="side-menu">
+    <div class="profile-card">
+      <img class="avatar-img" [src]="user.image" alt="profile" />
+      <h3 class="name">{{ user.name }}</h3>
+      <p class="phone">{{ user.phone }}</p>
+    </div>
+    <div class="menu-item">
+      <i class="fa-solid fa-user icon"></i>
+      <h4 class="title">My Details</h4>
+    </div>
+    <div class="menu-item">
+      <i class="fa-solid fa-tree icon"></i>
+      <h4 class="title">My Trees</h4>
+    </div>
+    <div class="menu-item">
+      <i class="fa-solid fa-calendar icon"></i>
+      <h4 class="title">My Events</h4>
+    </div>
+    <div class="menu-item">
+      <i class="fa-solid fa-handshake-angle icon"></i>
+      <h4 class="title">Help</h4>
+    </div>
+    <div class="menu-item">
+      <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
+      <h4 class="title">Logout</h4>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="profile-details" *ngIf="activeSection == 'profile'">
+      <br />
+      <br />
+      <img
+        class="avatar-img"
+        [src]="user.image ?? '../../../assets/images/landing/blog.png'"
+        alt="profile"
+      />
+      <br />
+      <label class="from-field" for="name">
+        <input
+          required
+          type="text"
+          name="name"
+          placeholder="Enter Your Name"
+          [(ngModel)]="user.name"
+        />
+        <span class="label">Name</span>
+      </label>
+      <label class="from-field" for="email">
+        <input
+          required
+          type="email"
+          name="email"
+          placeholder="Enter Your Email Address"
+          [(ngModel)]="user.email"
+        />
+        <span class="label">Email</span>
+      </label>
+      <label class="from-field" for="mobile">
+        <input
+          required
+          type="number"
+          name="mobile"
+          placeholder="Enter Your mobile"
+          [(ngModel)]="user.phone"
+        />
+        <span class="label">Mobile</span>
+      </label>
+      <label class="from-field" for="dob">
+        <input
+          required
+          type="date"
+          name="dob"
+          placeholder="Enter Your Date of birth"
+          [(ngModel)]="user.dob"
+        />
+        <span class="label">Date of Birth</span>
+      </label>
+      <br />
+      <br />
+      <button class="btn btn-primary">Edit</button>
+    </div>
+    <div class="plants-container" *ngIf="activeSection == 'plants'">
+      <article class="plant-card" *ngFor="let plant of plants">
+        <img [src]="plant.image" [alt]="plant.name" class="plant-img" />
+        <div class="card-body">
+          <h3 class="card-title">{{ plant.name }}</h3>
+          <p class="card-description">Plant ID: {{ plant.id }}</p>
+          <p class="card-description">DOP: {{ plant.dob }}</p>
+          <p class="card-description">Age: {{ plant.age }} Days</p>
+          <p class="card-description">Occation: {{ plant.occation }}</p>
+        </div>
+        <footer class="card-footer">
+          <h4 class="card-stats">View Certificate</h4>
+          <div>
+            <button class="btn btn-primary">Plant Location</button>
+            <p class="card-des">
+              Sponsored By: <b>{{ plant.sponsored }}</b>
+            </p>
+          </div>
+        </footer>
+      </article>
+    </div>
+    <div class="help-container" *ngIf="activeSection == 'help'">
+      <h3 class="heading">Help Center</h3>
+      <p class="description">
+        Please do leave us the message below, We will revert back to you soon
+      </p>
+      <label class="text-field" for="message">
+        <div class="text-area">
+          <textarea
+            required
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Enter the Message"
+          ></textarea>
+          <span class="label">Message</span>
+        </div>
+      </label>
+      <button class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</main>

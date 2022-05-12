@@ -1,0 +1,56 @@
+// App Layout
+
+.app-layout {
+  max-width: 1500px;
+  margin: auto;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "statusbar navbar"
+    "main main";
+
+  .main {
+    height: 100%;
+    grid-column: 1 / 3;
+    overflow-y: scroll;
+  }
+}
+
+// Tablet Layout
+@media screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .app-layout {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "statusbar"
+      "main"
+      "navbar";
+
+    .statusbar {
+      grid-column: 1 / 3;
+    }
+    .navbar {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+// Mobile layout
+@media (max-width: $mobile-width) {
+  .app-layout {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "statusbar"
+      "main"
+      "navbar";
+
+    .statusbar {
+      grid-column: 1 / 3;
+    }
+    .navbar {
+      grid-column: 1 / 3;
+    }
+  }
+}

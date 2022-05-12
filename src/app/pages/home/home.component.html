@@ -1,0 +1,43 @@
+<main class="main-container home">
+  <br />
+  <h2 class="heading">Occasion</h2>
+  <p class="description">Please do select the Occasion Your Sponsoring Plant</p>
+  <br />
+  <div class="occation-list">
+    <button class="btn-primay">My Birthday</button>
+    <button class="btn-primay">Friend Birthday</button>
+    <button class="btn-primay">Other+</button>
+  </div>
+  <br />
+  <div class="category-container">
+    <div class="split">
+      <h3 class="heading">Categories</h3>
+      <div class="spacer"></div>
+      <h4 class="nav-txt">See all</h4>
+    </div>
+    <div class="category-list">
+      <div class="category-card" *ngFor="let category of categories">
+        <img class="img" [src]="category.image" alt="Category" />
+        <p class="title">{{ category.name }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="plant-container">
+    <div class="split">
+      <h3 class="heading">Categories</h3>
+      <div class="spacer"></div>
+      <h4 class="nav-txt">See all</h4>
+    </div>
+    <div class="plant-list">
+      <div
+        class="plant-card"
+        *ngFor="let plant of plants"
+        [routerLink]="['/plants/' + plant.id]"
+      >
+        <img class="img" [src]="plant.image" alt="Plant" />
+        <h4 class="title">{{ plant.name }}</h4>
+        <p class="description">{{ plant.description }}</p>
+      </div>
+    </div>
+  </div>
+</main>

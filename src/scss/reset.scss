@@ -1,0 +1,35 @@
+* {
+  font-size: 16px;
+  font-family: "Roboto";
+}
+
+body {
+  margin: 0px;
+}
+
+h1,
+h2 {
+  margin: 0.6rem 0px;
+  vertical-align: baseline;
+}
+
+h3,
+h4,
+h5,
+p {
+  margin: 0.2rem 0px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+br {
+  height: 15px;
+}
+
+.main-container {
+  grid-area: main;
+  display: block;
+  box-sizing: border-box;
+}

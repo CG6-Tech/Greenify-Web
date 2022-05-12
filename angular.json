@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "greenify:build:production",
+            "firebaseProject": "greenify-2022",
+            "firebaseHostingSite": "greenify-2022"
+          }
         }
       }
     }

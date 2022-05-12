@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "greenify-2022": {
+      "hosting": {
+        "greenify": [
+          "greenify-2022"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "greenify-2022"
+  }
+}

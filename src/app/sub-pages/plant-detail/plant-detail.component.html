@@ -1,0 +1,22 @@
+<div class="main-conatainer plant-detail-container">
+  <br />
+  <div class="split">
+    <h2 class="heading">Plant Details</h2>
+    <div class="spacer"></div>
+    <div class="description">Sponsored To: Nithin s</div>
+  </div>
+  <article class="card plant-detail-card">
+    <img [src]="plant.image" alt="Plant" class="plant-img" />
+    <div class="card-body">
+      <h3 class="card-title">{{ plant.name }}</h3>
+      <p class="card-description">Plant ID: {{ plant.id }}</p>
+      <p class="card-description">
+        DOP: {{ plant.dob | date: "'today is ' MMMM d, y" }}
+      </p>
+      <p class="card-description">Age: {{ plant.age }} Months</p>
+      <p class="card-description">Occation: {{ plant.occation }}</p>
+    </div>
+  </article>
+  <br />
+  <img [src]="plant.certificate" alt="certificate" class="certificate" />
+</div>

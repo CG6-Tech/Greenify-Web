@@ -1,0 +1,39 @@
+<main class="main-container plants-container">
+  <br />
+  <div class="category-container">
+    <div class="split">
+      <h3 class="heading">Categories</h3>
+      <div class="spacer"></div>
+      <h4 class="nav-txt">See all</h4>
+    </div>
+    <br />
+    <div class="category-list">
+      <div class="category-card" *ngFor="let category of categories">
+        <img class="img" [src]="category.image" alt="Category" />
+        <p class="title">{{ category.name }}</p>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div class="plant-container">
+    <div class="split">
+      <h3 class="heading">Categories</h3>
+      <div class="spacer"></div>
+      <h4 class="nav-txt">See all</h4>
+    </div>
+    <br />
+    <div class="plant-list">
+      <div
+        class="plant-card"
+        *ngFor="let plant of plants"
+        [routerLink]="['/plants/' + plant.id]"
+      >
+        <img class="img" [src]="plant.image" alt="Plant" />
+        <h4 class="title">{{ plant.name }}</h4>
+        <p class="description">{{ plant.description }}</p>
+      </div>
+    </div>
+    <br />
+  </div>
+  <button class="btn btn-float btn-primary">Sponser a Sapling</button>
+</main>

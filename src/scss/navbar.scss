@@ -1,0 +1,154 @@
+.statusbar {
+  grid-area: statusbar;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.25s ease-in;
+  background-color: white;
+  box-shadow: -1px 2px 4px #afafaf;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
+
+  .search-field {
+    margin-left: 10px;
+    display: flex;
+    .search {
+      border: none;
+      border-radius: 5px 0px 0px 5px;
+      background-color: #f0f0f0;
+      color: grey;
+      padding: 5px;
+    }
+
+    .btn {
+      border-radius: 0px 5px 5px 0px;
+      background-color: #f0f0f0;
+      color: grey;
+    }
+  }
+}
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 2px 4px #afafaf;
+
+  .btn-txt {
+    margin: 5px;
+    display: flex;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    max-height: 40px;
+    font-weight: bold;
+    background-color: white;
+    color: #3a3a3a;
+    &:hover {
+      background-color: #d8ebde;
+      .icon {
+        color: var(--primary-color);
+      }
+      .lable {
+        color: var(--primary-color);
+      }
+    }
+
+    .icon {
+      margin-top: 7.5px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .lable {
+      margin-top: 5px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3a3a3a;
+    }
+  }
+
+  .active {
+    background-color: #d8ebde;
+    .icon {
+      color: var(--primary-color);
+    }
+    .lable {
+      color: var(--primary-color);
+    }
+  }
+}
+
+// Tablet Navbar
+
+@media screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .app-layout {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "statusbar"
+      "main"
+      "navbar";
+
+    .statusbar {
+      grid-column: 1 / 3;
+    }
+    .navbar {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+// Mobile layout
+@media (max-width: $mobile-width) {
+  .login {
+    display: none !important;
+  }
+  .app-layout {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "statusbar"
+      "main"
+      "navbar";
+
+    .statusbar {
+      grid-column: 1 / 3;
+
+      .search-field {
+        display: none !important;
+      }
+    }
+    .navbar {
+      box-shadow: 0px -1px 6px #afafaf;
+      grid-column: 1 / 3;
+      justify-content: space-evenly !important;
+
+      .btn-txt {
+        border-radius: 20px !important;
+        padding: 2px 10px !important;
+        margin: 2.5px 0px !important;
+
+        .lable {
+          font-size: 1rem !important;
+        }
+      }
+
+      .aboutus-nav {
+        display: none !important;
+      }
+    }
+
+    .active {
+      padding: 2.5px 5px !important;
+    }
+  }
+}

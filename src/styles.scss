@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/reset.scss";
+@import "scss/variables.scss";
+@import "scss/main.scss";
+@import "scss/navbar.scss";
+@import "scss/pages/landing.scss";
+@import "scss/pages/home.scss";
+@import "scss/pages/aboutus.scss";
+@import "scss/pages/auth.scss";
+@import "scss/pages/profile.scss";
+@import "scss/pages/plant-details.scss";

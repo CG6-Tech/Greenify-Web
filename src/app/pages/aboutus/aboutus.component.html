@@ -1,0 +1,25 @@
+<main class="main-container aboutus-container">
+  <br />
+  <br />
+  <h2 class="heading">Vision</h2>
+  <br />
+  <article class="card vision-card">
+    <div class="line"></div>
+    <p class="description">
+      Our vision is to give Back to Nature, make our planet more greener by
+      establishing the eco-friendly and sustainable lifestyle of Human Race.
+    </p>
+  </article>
+  <br />
+  <h2 class="heading">Meet Our Team</h2>
+  <div class="team-list">
+    <article class="card team-card" *ngFor="let mamber of team">
+      <img [src]="mamber.image" alt="Team Mamber" class="avatar" />
+      <br />
+      <div class="card-body">
+        <h3 class="card-title">{{ mamber.name }}</h3>
+        <p class="card-sub-title">{{ mamber.role }}</p>
+      </div>
+    </article>
+  </div>
+</main>

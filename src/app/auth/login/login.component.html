@@ -1,0 +1,46 @@
+<main class="main-container login-container">
+  <img
+    class="floa-img"
+    src="../../../assets/images/landing/leaf.svg"
+    alt="Leaf"
+  />
+  <form class="form login-form">
+    <h2 class="heading">Login</h2>
+    <p class="description">Secure login</p>
+    <label class="from-field" for="phone">
+      <input
+        required
+        type="number"
+        name="phone"
+        placeholder="Enter Phone Number"
+        [(ngModel)]="this.phoneNumber"
+      />
+      <span class="label">Phone Number</span>
+    </label>
+    <br />
+    <br />
+    <button class="btn btn-primary" (click)="getOtp()">Login</button>
+  </form>
+</main>
+
+<main class="main-container login-container">
+  <form class="form login-form">
+    <h2 class="heading">Verify Mobile Number</h2>
+    <p class="description">Enter the OTP sent to 9948277949</p>
+    <label class="from-field" for="OTP">
+      <input required type="number" name="OTP" placeholder="Enter OTP" />
+      <span class="label">OTP</span>
+    </label>
+    <br />
+    <br />
+    <div class="split">
+      <p class="stats-txt">Resend OTP</p>
+      <div class="spacer"></div>
+      <p class="stats-txt">
+        <span class="stats-num">00:00</span>
+      </p>
+    </div>
+    <br />
+    <button class="btn btn-primary">Login</button>
+  </form>
+</main>
